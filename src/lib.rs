@@ -11,6 +11,8 @@
   clippy::cast_sign_loss
 )]
 
+pub use ordinals;
+
 use {
   self::{
     arguments::Arguments,
