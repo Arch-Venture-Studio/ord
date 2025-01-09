@@ -36,7 +36,7 @@ fn default<T: Default>() -> T {
   Default::default()
 }
 
-mod artifact;
+pub mod artifact;
 mod cenotaph;
 mod charm;
 mod decimal_sat;
@@ -50,7 +50,7 @@ mod pile;
 mod rarity;
 mod rune;
 mod rune_id;
-mod runestone;
+pub mod runestone;
 pub mod sat;
 pub mod sat_point;
 pub mod spaced_rune;
