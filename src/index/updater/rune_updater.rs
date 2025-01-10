@@ -133,8 +133,10 @@ impl<'a, 'tx, 'client> RuneUpdater<'a, 'tx, 'client> {
       // OP_RETURN output if there is no default, or if the default output is
       // too large
       if let Some(vout) = pointer
-        .map(|pointer| pointer.into_usize())
-        .inspect(|&pointer| assert!(pointer < allocated.len()))
+        .map(|pointer| {
+          assert!(pointer.into_usize() < allocated.len()); // Perform the assertion
+          pointer.into_usize()
+        })
         .or_else(|| {
           tx.output
             .iter()
